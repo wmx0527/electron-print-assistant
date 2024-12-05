@@ -1,0 +1,48 @@
+# 依赖目录
+node_modules/
+vendor/
+
+# 编译输出
+dist/
+build/
+out/
+
+# IDE 和编辑器文件
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+
+# 日志文件
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 环境变量文件
+.env
+.env.local
+.env.*.local
+
+# 缓存文件
+.cache/
+.temp/
+
+# 测试覆盖率报告
+coverage/
+
+# 系统文件
+Thumbs.db
+.DS_Store
+*.swp
+*.swo
+
+# 包管理器文件
+package-lock.json
+yarn.lock
+composer.lock
+
+# 临时文件
+*.tmp
+*.temp

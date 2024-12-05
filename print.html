@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="print-content">
+        打印模板
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const content = urlParams.get('content');
+        document.body.innerHTML = content; // 将内容插入到页面中
+    </script>
+</body>
+
+</html>

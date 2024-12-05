@@ -1,0 +1,98 @@
+{
+  "description": "A Vue-Electron application",
+  "author": "Your Name <your.email@example.com>",
+  "name": "vue-electron",
+  "version": "1.0.0",
+  "main": "main.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "app:dir": "electron-builder --dir",
+    "app:dist": "electron-builder",
+    "build:mac": "electron-builder --mac",
+    "build:win": "electron-builder --win",
+    "publish": "electron-builder --config --publish always",
+    "publish:win": "electron-builder --win --config --publish always",
+    "publish:mac": "electron-builder --mac --config --publish always",
+    "dist": "electron-builder --publish never",
+    "electron:generate-icons": "electron-icon-builder --input=./public/favicon.png --output=public --flatten",
+    "release": "cross-env GH_TOKEN=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 electron-builder --win"
+  },
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/wmx0527/electron-print-assistant.git"
+    },
+  "build": {
+    "productName": "亚洲工具辅助打印组件",
+    "appId": "com.leon.xxxxx",
+    "copyright": "xxxx",
+    "directories": {
+      "output": "build"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "./public/icons/icon.ico",
+      "uninstallerIcon": "./public/icons/icon.ico",
+      "installerHeaderIcon": "./public/icons/icon.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "亚洲工具辅助打印组件",
+      "perMachine": true
+    },
+    "publish": [
+      "github"
+    ],
+    "files": [
+      "public/**/*",
+      "main.js",
+      "preload.js",
+      "index.html",
+      "renderer.js",
+      "print.html"
+    ],
+    "asar": true,
+    "dmg": {
+      "contents": [
+        {
+          "x": 410,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 130,
+          "y": 150,
+          "type": "file"
+        }
+      ]
+    },
+    "mac": {
+      "icon": "public/icons/icon.icns"
+    },
+    "win": {
+      "icon": "public/icons/icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "ia32"
+          ]
+        }
+      ]
+    },
+    "linux": {
+      "icon": "build/icons"
+    }
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8",
+    "electron-icon-builder": "^2.0.1"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}
